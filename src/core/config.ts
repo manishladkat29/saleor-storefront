@@ -3,6 +3,11 @@ import { generatePageUrl } from "./utils";
 export const BASE_URL = "/";
 export const PRODUCTS_PER_PAGE = 6;
 export const SUPPORT_EMAIL = "support@example.com";
+export const FACEBOOK_URL = process.env.FACEBOOK_URL;
+export const INSTAGRAM_URL = process.env.INSTAGRAM_URL;
+export const TWITTER_URL = process.env.TWITTER_URL;
+export const YOUTUBE_URL = process.env.YOUTUBE_URL;
+
 export const PROVIDERS = {
   BRAINTREE: {
     label: "Braintree",
@@ -24,22 +29,22 @@ export const STATIC_PAGES = [
 export const SOCIAL_MEDIA = [
   {
     ariaLabel: "facebook",
-    href: "https://www.facebook.com/mirumeelabs/",
+    href: FACEBOOK_URL,
     path: require("../images/facebook-icon.svg"),
   },
   {
     ariaLabel: "instagram",
-    href: "https://www.instagram.com/mirumeelabs/",
+    href: INSTAGRAM_URL,
     path: require("../images/instagram-icon.svg"),
   },
   {
     ariaLabel: "twitter",
-    href: "https://twitter.com/getsaleor",
+    href: TWITTER_URL,
     path: require("../images/twitter-icon.svg"),
   },
   {
     ariaLabel: "youtube",
-    href: "https://www.youtube.com/channel/UCg_ptb-U75e7BprLCGS4s1g/videos",
+    href: YOUTUBE_URL,
     path: require("../images/youtube-icon.svg"),
   },
 ];

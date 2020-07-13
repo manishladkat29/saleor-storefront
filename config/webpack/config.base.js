@@ -5,9 +5,25 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const webpack = require("webpack");
 
+
 if (!process.env.API_URI) {
   throw new Error("Environment variable API_URI not set");
 }
+if (!process.env.FACEBOOK_URI) {
+  throw new Error("Environment variable FACEBOOK_URI not set");
+}
+if (!process.env.INSTAGRAM_URI) {
+  throw new Error("Environment variable INSTAGRAM_URI not set");
+}
+if (!process.env.TWITTER_URI) {
+  throw new Error("Environment variable TWITTER_URI not set");
+}
+if (!process.env.YOUTUBE_URI) {
+  throw new Error("Environment variable YOUTUBE_URI not set");
+}
+
+
+console.log(process.env.FACEBOOK_URI);
 
 module.exports = ({ sourceDir, distDir }) => ({
   resolve: {
@@ -91,6 +107,7 @@ module.exports = ({ sourceDir, distDir }) => ({
     new HtmlWebpackPlugin({
       filename: `${distDir}/index.html`,
       template: `${sourceDir}/index.html`,
+      SHOP_NAME: process.env.SHOP_NAME,
       API_URI: process.env.API_URI,
     }),
     new ForkTsCheckerWebpackPlugin({
@@ -112,6 +129,11 @@ module.exports = ({ sourceDir, distDir }) => ({
     }),
     new webpack.EnvironmentPlugin({
       API_URI: "http://localhost:8000/graphql/",
+      SHOP_NAME: process.env.SHOP_NAME,
+      FACEBOOK_URI: process.env.FACEBOOK_URI,
+      INSTAGRAM_URI: process.env.INSTAGRAM_URI,
+      TWITTER_URI: process.env.TWITTER_URI,
+      YOUTUBE_URI:process.env.YOUTUBE_URI,
     }),
   ],
   node: {

@@ -1,12 +1,12 @@
 import { generatePageUrl } from "./utils";
 
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 export const BASE_URL = "/";
 export const PRODUCTS_PER_PAGE = 6;
 export const SUPPORT_EMAIL = "support@example.com";
-export const FACEBOOK_URL = process.env.FACEBOOK_URL;
-export const INSTAGRAM_URL = process.env.INSTAGRAM_URL;
-export const TWITTER_URL = process.env.TWITTER_URL;
-export const YOUTUBE_URL = process.env.YOUTUBE_URL;
 
 export const PROVIDERS = {
   BRAINTREE: {
@@ -29,31 +29,31 @@ export const STATIC_PAGES = [
 export const SOCIAL_MEDIA = [
   {
     ariaLabel: "facebook",
-    href: FACEBOOK_URL,
+    href: process.env.FACEBOOK_URI,
     path: require("../images/facebook-icon.svg"),
   },
   {
     ariaLabel: "instagram",
-    href: INSTAGRAM_URL,
+    href: process.env.INSTAGRAM_URI,
     path: require("../images/instagram-icon.svg"),
   },
   {
     ariaLabel: "twitter",
-    href: TWITTER_URL,
+    href: process.env.TWITTER_URI,
     path: require("../images/twitter-icon.svg"),
   },
   {
     ariaLabel: "youtube",
-    href: YOUTUBE_URL,
+    href: process.env.YOUTUBE_URI,
     path: require("../images/youtube-icon.svg"),
   },
 ];
 export const META_DEFAULTS = {
   custom: [],
   description:
-    "Open-source PWA storefront built with Saleor's e-commerce GraphQL API. Written with React and TypeScript.",
+    "Neural's E-commerce Storefront",
   image: `${window.location.origin}${require("../images/logo.svg")}`,
-  title: "Demo PWA Storefront – Saleor Commerce",
+  title: process.env.SHOP_NAME,
   type: "website",
   url: window.location.origin,
 };

@@ -3,6 +3,9 @@ import "./scss/index.scss";
 import * as React from "react";
 import ReactSVG from "react-svg";
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 import {
   LoginForm,
   Offline,
@@ -45,7 +48,7 @@ class Login extends React.Component<
         <div className="login">
           <Online>
             <div className="overlay__header">
-              <p className="overlay__header-text">Saleor account</p>
+              <p className="overlay__header-text">{process.env.SHOP_NAME} account</p>
               <ReactSVG
                 path={closeImg}
                 onClick={hide}

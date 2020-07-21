@@ -15,7 +15,7 @@ const Consumer: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
             { property: "og:title", content: title },
             { property: "og:description", content: description },
             { property: "og:type", content: type },
-            { property: "og:image", content: image },
+            { property: "og:image", content: image.split("-thumbnail-")[0].replace("__sized__/", "").concat(".png") },
             ...custom,
           ]}
         />

@@ -5,6 +5,8 @@ export const Modal = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  max-height: 100vh;
+  overflow-y: scroll;
 `;
 
 export const Content = styled.div`

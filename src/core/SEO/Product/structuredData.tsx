@@ -12,18 +12,20 @@ const getVariantsStructuredData = variants => {
 };
 
 export const structuredData = product => {
-  const images = product.images.map(image => new URL(image.url).pathname);
+  const images = product.images.map(image => new URL(image.url.split("?")[0]));
   const variants = product.variants;
 
   return JSON.stringify({
     "@context": "https://schema.org/",
     "@type": "Product",
+    brand: `${product.name}`,
     description: !product.seoDescription
       ? `${product.description}`
       : `${product.seoDescription}`,
     image: images,
     name: !product.seoTitle ? `${product.name}` : `${product.seoTitle}`,
     offers: getVariantsStructuredData(variants),
+    productID: `${product.id}`,
     url: location.href,
   });
 };

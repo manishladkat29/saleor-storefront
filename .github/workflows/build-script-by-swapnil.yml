@@ -38,10 +38,10 @@ jobs:
       - name: Generate build
         run: npm run build
         env:
-          API_URI: https://royal-spices-kszvl2ukvq-uc.a.run.app/graphql/
-          FACEBOOK_URI: https://www.facebook.com
-          INSTAGRAM_URI: https://www.instagram.com
-          TWITTER_URI: https://www.twitter.com
+          API_URI: https://demo-kszvl2ukvq-uc.a.run.app/graphql/
+          FACEBOOK_URI: https://https://www.facebook.com/buildeshop.page
+          INSTAGRAM_URI: https://www.instagram.com/buildeshop/
+          TWITTER_URI: https://twitter.com/buildeshop/
           YOUTUBE_URI: https://www.youtube.com
 
       # Share artifact inside workflow
